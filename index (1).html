@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.png">
+  <title>Nhonga Market</title>
+  <style>
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(135deg,#f7f7f7,#e9e9e9);color:#111}
+    header{position:sticky;top:0;z-index:5;padding:16px 22px;background:rgba(255,255,255,.72);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+    .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+    .brand img{width:38px;height:38px;border-radius:12px}.btn{border:0;border-radius:14px;padding:11px 16px;font-weight:700;cursor:pointer}.dark{background:#111;color:white}
+    main{max-width:1100px;margin:auto;padding:45px 22px}.hero{padding:45px 30px;border-radius:30px;background:rgba(255,255,255,.62);backdrop-filter:blur(22px);box-shadow:0 20px 60px rgba(0,0,0,.09)}
+    h1{font-size:clamp(38px,7vw,72px);line-height:.98;margin:0 0 18px}.hero p{font-size:18px;max-width:650px;color:#555;line-height:1.6}
+    .search{display:flex;gap:10px;margin-top:25px}.search input{flex:1;padding:15px 18px;border-radius:15px;border:1px solid #ddd;font-size:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:30px}.card{padding:22px;border-radius:22px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .card b{display:block;margin-bottom:8px}.muted{color:#666}.tag{display:inline-block;padding:7px 10px;border-radius:999px;background:#eee;font-size:12px;margin-top:10px}
+    footer{text-align:center;padding:35px;color:#777}
+  </style>
+</head>
+<body>
+<header><div class="nav"><div class="brand"><img src="icon.png" alt="Nhonga Market">Nhonga Market</div><button class="btn dark" onclick="alert('Área de vendedor — em breve')">Vender</button></div></header>
+<main>
+<section class="hero">
+  <div class="tag">🇲🇿 O mercado digital de Moçambique</div>
+  <h1>Compre. Venda.<br>Nhonga.</h1>
+  <p>Uma experiência moderna para comprar e vender produtos e serviços em Moçambique. Esta é a versão inicial do site/PWA do Nhonga Market.</p>
+  <div class="search"><input id="q" placeholder="O que procura?"><button class="btn dark" onclick="search()">Pesquisar</button></div>
+</section>
+<section class="grid">
+  <div class="card"><b>📱 Tecnologia</b><span class="muted">Telefones, computadores e acessórios</span></div>
+  <div class="card"><b>🚗 Automóveis</b><span class="muted">Carros, peças e acessórios</span></div>
+  <div class="card"><b>👕 Moda</b><span class="muted">Roupa, calçado e acessórios</span></div>
+  <div class="card"><b>🏠 Casa</b><span class="muted">Móveis, decoração e eletrodomésticos</span></div>
+  <div class="card"><b>💄 Beleza</b><span class="muted">Cosméticos e cuidados pessoais</span></div>
+  <div class="card"><b>🌾 Agricultura</b><span class="muted">Produtos e equipamentos agrícolas</span></div>
+</section>
+</main>
+<footer>Nhonga Market © 2026 — versão inicial</footer>
+<script>
+function search(){const q=document.getElementById('q').value.trim();alert(q?`A pesquisar por: ${q}`:'Digite o que procura.')}
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
